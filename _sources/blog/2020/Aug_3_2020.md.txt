@@ -1,0 +1,15 @@
+---
+blogpost: true
+author: James Usevitch
+date: 2020-08-03
+category: Music
+tags: music, synth, mixing, audio
+---
+
+# August 3, 2020
+
+I have been extremely impressed by the quality of [Spitfire Audio Labs'][8-3-20-1] line of free sampled instruments. I've been getting back into composing with them recently, and the quality is astoundingly good. My favorites at this point are probably the soft piano, choir, and music box (no, I am not composing a song with all three of them at once). If you're looking for VSTs that simply sound good right out of the box, look no further.
+
+And for a lifetime's worth of other free VST options, there are the links on my [music resources page](../../music/daws_vsts_software.md) which I will probably be exploring forever. It's remarkable how many composition/mixing tools you can get for free if you know where to look.  
+
+[8-3-20-1]: https://labs.spitfireaudio.com/#category=&search=&new=false

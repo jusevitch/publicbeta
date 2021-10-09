@@ -1,0 +1,29 @@
+# Control Theory Resources
+
+In technical jargon, Control Theory is a branch of mathematics dealing with controlling dynamical systems. Less formally, control theory deals with making something do what you want it to, using math. I completed my PhD in Control Theory, so I have a vested interest in maintaining a good list of resources for the topic.
+
+
+## Learning Control Theory
+
+I'll be working on this section in the coming months. 
+
+### Brian Douglas
+
+Let's get this out of the way: If you're learning Control Theory and have not watched Brian Douglas's videos on YouTube, you are shooting yourself in the foot. You will learn (and understand) more about control theory from his videos than from almost any book or university course on the planet.
+
+You can find his videos at two channels on YouTube:
+
+* [Original Videos](https://www.youtube.com/user/ControlLectures)
+* [Matlab Tech Talk Videos](https://www.youtube.com/user/MATLAB) (YouTube Channel). You can see a list of Brian's videos only at [his website](https://engineeringmedia.com/videos).
+
+Brian also runs an excellent website called [Resourcium](https://resourcium.org/) which is compiling a large database of learning resources for various engineering topics.
+
+### Curriculum for Control Theory
+
+
+* Undergraduate-Level Control Theory
+* Graduate-Level Control Theory
+
+## Control Theory Topics
+
+This section will contain resources on specific topics in Control Theory.

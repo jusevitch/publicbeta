@@ -1,0 +1,90 @@
+# Meta Learning Resources
+
+Mastering the process of learning is a valuable investment with high rewards. The faster and more efficiently you are able to learn, the less time it will take to start delivering results. The longer you are able to retain the skills and knowledge you have learned, the less you will need to review and retrain yourself in the future.
+
+As per [Wikipedia](https://en.wikipedia.org/wiki/Meta_learning), meta learning is "a branch of metacognition concerned with learning about one's own learning and learning processes." In layman's terms, it's simply studying and improving your learning processes to make them more effective.
+
+## Books on Learning
+
+```{margin}
+![](./A_Mind_For_Numbers.jpg)
+```
+### [A Mind for Numbers](https://barbaraoakley.com/books/a-mind-for-numbers/) 
+
+An excellent book on how the mind learns and methods for effectively retaining and recalling information. The writing style may come across as somewhat simple, but don't be fooled--the principles are extremely powerful if you actually apply them. 
+
+The material in the book is essentially the same as in the companion Coursera course _Learning How to Learn_ (described below).
+
+```{margin}
+![](./Ultralearning.jpg)
+```
+### [Ultralearning](https://www.scotthyoung.com/blog/ultralearning/)
+
+Another fantastic book on learning. The book has some overlap with A Mind for Numbers, but focuses much more heavily on practical methods for diving straight into learning by doing. The author (Scott Young) based much of the material in the book not only on research he performed, but on rapid-learning projects he personally undertook (e.g. taking all classes for a 4-year MIT computer science degree [in 12 months](https://www.scotthyoung.com/blog/myprojects/mit-challenge-2/)).
+
+```{margin}
+![](./Make_It_Stick.jpg)
+```
+### [Make It Stick](https://www.hup.harvard.edu/catalog.php?isbn=9780674729018)
+
+Another book on memory and the psychology of learning. Haven't finished the whole thing, but what I've read so far is good.
+
+
+## Tools for Learning
+
+### [Anki](https://apps.ankiweb.net/)
+
+A fantastic electronic flashcard tool for maintaining long-term memory. Anki automatically and intelligently keeps track of which cards you need to review based on principles of spaced repetition. It's free and open source, it can be synced between a computer and mobile phone, and supports a variety of different flashcards. Oh, and you can make [flashcards with LaTeX symbols](http://www.wucathy.com/blog/?p=2704), which is useful for technical/mathematical subjects.[^anki1]
+
+[^anki1]: There's a shorter method to get started with LaTeX in Anki on [Ask Ubuntu](https://askubuntu.com/questions/668762/using-latex-in-anki), but Cathy Wu's explanation is more thorough.
+
+
+
+### [SuperMemo](https://www.supermemo.com/en) 
+
+Similar electronic flashcard concept as Anki, except it costs money. However, it's worth noting that Anki's algorithm for spaced repetition is a [variant of the SM-2 algorithm][supermemo1] which is an older version of the [algorithm used by SuperMemo][supermemo2].
+
+[supermemo1]: https://apps.ankiweb.net/docs/manual.html#what-spaced-repetition-algorithm-does-anki-use
+[supermemo2]: https://supermemo.guru/wiki/Algorithm_SM-18
+
+
+### [I Do Recall](https://idorecall.com/) 
+
+Another similar electronic flashcard concept as Anki, except it costs money. 
+
+
+## Online Resources for Learning
+
+### [Learning How to Learn](https://www.coursera.org/learn/learning-how-to-learn/) (Coursera Course)
+
+One of the most popular massive open online courses (MOOC) of all time, this contains the same material as the book [A Mind For Numbers](books.md#a-mind-for-numbers). I highly recommend taking this course. Best of all, it's free (as in lunch).[^1]
+
+[^1]: As of January 2020.
+
+
+### [Augmenting Long-Term Memory](http://augmentingcognition.com/ltm.html)
+
+(Website by Michael Nielsen)
+
+
+### [SuperMemo Guru](https://supermemo.guru/wiki/SuperMemo_Guru)
+
+I just started exploring this site, but it looks pretty deep. In the words of the website itself,
+
+> This site offers texts on memory, learning, sleep, creativity, problem solving, brain science, health, and education.
+
+Particularly interesting resources to check out include:
+
+* Descriptions of the [SuperMemo Algorithms][supermemo3] used by the SuperMemo software.
+* Principles of [spaced repetition](https://supermemo.guru/wiki/General_principles_of_spaced_repetition)
+* Principles for [problem solving](https://supermemo.guru/wiki/How_to_solve_any_problem%3F)
+
+
+[supermemo3]: https://supermemo.guru/wiki/History_of_SuperMemo_algorithm
+
+
+### [Nelson Dellis](https://www.youtube.com/channel/UCnINhoHWuVjUDXp7dav5e3A) (YouTube Channel)
+
+Nelson is a longtime favorite of the creators of _Learning How to Learn_. He competes in memory competitions and puts out YouTube videos about his methods. He also climbs Mount Everest every now and again.
+
+

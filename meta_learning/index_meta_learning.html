@@ -1,0 +1,432 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meta Learning Resources &#8212; Public Beta</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Control Theory Resources" href="../control_theory/index_control_theory.html" />
+    <link rel="prev" title="About" href="../about.html" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+      
+<style type="text/css">
+  ul.ablog-archive {
+    list-style: none;
+    overflow: auto;
+    margin-left: 0px;
+  }
+  ul.ablog-archive li {
+    float: left;
+    margin-right: 5px;
+    font-size: 80%;
+  }
+  ul.postlist a {
+    font-style: italic;
+  }
+  ul.postlist-style-disc {
+    list-style-type: disc;
+  }
+  ul.postlist-style-none {
+    list-style-type: none;
+  }
+  ul.postlist-style-circle {
+    list-style-type: circle;
+  }
+</style>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Public Beta</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../blog.html">
+   Blog
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about.html">
+   About
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Meta Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../control_theory/index_control_theory.html">
+   Control Theory
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../music/index_music.html">
+   Music
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../music/daws_vsts_software.html">
+     DAWs, VSTs, and Software
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/meta_learning/index_meta_learning.md.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#books-on-learning">
+   Books on Learning
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-mind-for-numbers">
+     A Mind for Numbers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ultralearning">
+     Ultralearning
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#make-it-stick">
+     Make It Stick
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tools-for-learning">
+   Tools for Learning
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#anki">
+     Anki
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#supermemo">
+     SuperMemo
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-do-recall">
+     I Do Recall
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#online-resources-for-learning">
+   Online Resources for Learning
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#learning-how-to-learn-coursera-course">
+     Learning How to Learn (Coursera Course)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#augmenting-long-term-memory">
+     Augmenting Long-Term Memory
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#supermemo-guru">
+     SuperMemo Guru
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nelson-dellis-youtube-channel">
+     Nelson Dellis (YouTube Channel)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                 <div class="tex2jax_ignore mathjax_ignore section" id="meta-learning-resources">
+<h1>Meta Learning Resources<a class="headerlink" href="#meta-learning-resources" title="Permalink to this headline">¶</a></h1>
+<p>Mastering the process of learning is a valuable investment with high rewards. The faster and more efficiently you are able to learn, the less time it will take to start delivering results. The longer you are able to retain the skills and knowledge you have learned, the less you will need to review and retrain yourself in the future.</p>
+<p>As per <a class="reference external" href="https://en.wikipedia.org/wiki/Meta_learning">Wikipedia</a>, meta learning is “a branch of metacognition concerned with learning about one’s own learning and learning processes.” In layman’s terms, it’s simply studying and improving your learning processes to make them more effective.</p>
+<div class="section" id="books-on-learning">
+<h2>Books on Learning<a class="headerlink" href="#books-on-learning" title="Permalink to this headline">¶</a></h2>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p><img alt="" src="../_images/A_Mind_For_Numbers.jpg" /></p>
+</div>
+<div class="section" id="a-mind-for-numbers">
+<h3><a class="reference external" href="https://barbaraoakley.com/books/a-mind-for-numbers/">A Mind for Numbers</a><a class="headerlink" href="#a-mind-for-numbers" title="Permalink to this headline">¶</a></h3>
+<p>An excellent book on how the mind learns and methods for effectively retaining and recalling information. The writing style may come across as somewhat simple, but don’t be fooled–the principles are extremely powerful if you actually apply them.</p>
+<p>The material in the book is essentially the same as in the companion Coursera course <em>Learning How to Learn</em> (described below).</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p><img alt="" src="../_images/Ultralearning.jpg" /></p>
+</div>
+</div>
+<div class="section" id="ultralearning">
+<h3><a class="reference external" href="https://www.scotthyoung.com/blog/ultralearning/">Ultralearning</a><a class="headerlink" href="#ultralearning" title="Permalink to this headline">¶</a></h3>
+<p>Another fantastic book on learning. The book has some overlap with A Mind for Numbers, but focuses much more heavily on practical methods for diving straight into learning by doing. The author (Scott Young) based much of the material in the book not only on research he performed, but on rapid-learning projects he personally undertook (e.g. taking all classes for a 4-year MIT computer science degree <a class="reference external" href="https://www.scotthyoung.com/blog/myprojects/mit-challenge-2/">in 12 months</a>).</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p><img alt="" src="../_images/Make_It_Stick.jpg" /></p>
+</div>
+</div>
+<div class="section" id="make-it-stick">
+<h3><a class="reference external" href="https://www.hup.harvard.edu/catalog.php?isbn=9780674729018">Make It Stick</a><a class="headerlink" href="#make-it-stick" title="Permalink to this headline">¶</a></h3>
+<p>Another book on memory and the psychology of learning. Haven’t finished the whole thing, but what I’ve read so far is good.</p>
+</div>
+</div>
+<div class="section" id="tools-for-learning">
+<h2>Tools for Learning<a class="headerlink" href="#tools-for-learning" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="anki">
+<h3><a class="reference external" href="https://apps.ankiweb.net/">Anki</a><a class="headerlink" href="#anki" title="Permalink to this headline">¶</a></h3>
+<p>A fantastic electronic flashcard tool for maintaining long-term memory. Anki automatically and intelligently keeps track of which cards you need to review based on principles of spaced repetition. It’s free and open source, it can be synced between a computer and mobile phone, and supports a variety of different flashcards. Oh, and you can make <a class="reference external" href="http://www.wucathy.com/blog/?p=2704">flashcards with LaTeX symbols</a>, which is useful for technical/mathematical subjects.<a class="footnote-reference brackets" href="#anki1" id="id1">2</a></p>
+</div>
+<div class="section" id="supermemo">
+<h3><a class="reference external" href="https://www.supermemo.com/en">SuperMemo</a><a class="headerlink" href="#supermemo" title="Permalink to this headline">¶</a></h3>
+<p>Similar electronic flashcard concept as Anki, except it costs money. However, it’s worth noting that Anki’s algorithm for spaced repetition is a <a class="reference external" href="https://apps.ankiweb.net/docs/manual.html#what-spaced-repetition-algorithm-does-anki-use">variant of the SM-2 algorithm</a> which is an older version of the <a class="reference external" href="https://supermemo.guru/wiki/Algorithm_SM-18">algorithm used by SuperMemo</a>.</p>
+</div>
+<div class="section" id="i-do-recall">
+<h3><a class="reference external" href="https://idorecall.com/">I Do Recall</a><a class="headerlink" href="#i-do-recall" title="Permalink to this headline">¶</a></h3>
+<p>Another similar electronic flashcard concept as Anki, except it costs money.</p>
+</div>
+</div>
+<div class="section" id="online-resources-for-learning">
+<h2>Online Resources for Learning<a class="headerlink" href="#online-resources-for-learning" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="learning-how-to-learn-coursera-course">
+<h3><a class="reference external" href="https://www.coursera.org/learn/learning-how-to-learn/">Learning How to Learn</a> (Coursera Course)<a class="headerlink" href="#learning-how-to-learn-coursera-course" title="Permalink to this headline">¶</a></h3>
+<p>One of the most popular massive open online courses (MOOC) of all time, this contains the same material as the book <a class="reference external" href="books.md#a-mind-for-numbers">A Mind For Numbers</a>. I highly recommend taking this course. Best of all, it’s free (as in lunch).<a class="footnote-reference brackets" href="#id3" id="id2">1</a></p>
+</div>
+<div class="section" id="augmenting-long-term-memory">
+<h3><a class="reference external" href="http://augmentingcognition.com/ltm.html">Augmenting Long-Term Memory</a><a class="headerlink" href="#augmenting-long-term-memory" title="Permalink to this headline">¶</a></h3>
+<p>(Website by Michael Nielsen)</p>
+</div>
+<div class="section" id="supermemo-guru">
+<h3><a class="reference external" href="https://supermemo.guru/wiki/SuperMemo_Guru">SuperMemo Guru</a><a class="headerlink" href="#supermemo-guru" title="Permalink to this headline">¶</a></h3>
+<p>I just started exploring this site, but it looks pretty deep. In the words of the website itself,</p>
+<blockquote>
+<div><p>This site offers texts on memory, learning, sleep, creativity, problem solving, brain science, health, and education.</p>
+</div></blockquote>
+<p>Particularly interesting resources to check out include:</p>
+<ul class="simple">
+<li><p>Descriptions of the <a class="reference external" href="https://supermemo.guru/wiki/History_of_SuperMemo_algorithm">SuperMemo Algorithms</a> used by the SuperMemo software.</p></li>
+<li><p>Principles of <a class="reference external" href="https://supermemo.guru/wiki/General_principles_of_spaced_repetition">spaced repetition</a></p></li>
+<li><p>Principles for <a class="reference external" href="https://supermemo.guru/wiki/How_to_solve_any_problem%3F">problem solving</a></p></li>
+</ul>
+</div>
+<div class="section" id="nelson-dellis-youtube-channel">
+<h3><a class="reference external" href="https://www.youtube.com/channel/UCnINhoHWuVjUDXp7dav5e3A">Nelson Dellis</a> (YouTube Channel)<a class="headerlink" href="#nelson-dellis-youtube-channel" title="Permalink to this headline">¶</a></h3>
+<p>Nelson is a longtime favorite of the creators of <em>Learning How to Learn</em>. He competes in memory competitions and puts out YouTube videos about his methods. He also climbs Mount Everest every now and again.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="anki1"><span class="brackets"><a class="fn-backref" href="#id1">2</a></span></dt>
+<dd><p>There’s a shorter method to get started with LaTeX in Anki on <a class="reference external" href="https://askubuntu.com/questions/668762/using-latex-in-anki">Ask Ubuntu</a>, but Cathy Wu’s explanation is more thorough.</p>
+</dd>
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>As of January 2020.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+<div class="section">
+   
+</div>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../about.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">About</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../control_theory/index_control_theory.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Control Theory Resources</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By James Usevitch<br/>
+        
+            &copy; Copyright 2021, James Usevitch.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

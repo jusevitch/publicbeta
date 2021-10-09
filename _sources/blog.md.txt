@@ -1,0 +1,3 @@
+# Blog
+
+Placeholder for the Blog page in the table of contents. Will be replaced (hopefully) by Ablog.

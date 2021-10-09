@@ -1,0 +1,20 @@
+---
+blogpost: true
+author: James Usevitch
+date: 2020-11-07
+category: Programming
+tags: programming, excellence, environment, tools
+---
+
+# Nov 7, 2020
+
+Bear with me as I work out how to express this idea clearly.
+
+When I work on programming projects, I have discovered that a huge chunk of my time is spent trying to simply get my environment to work. For example, figuring out how to get old ROS packages using Python 2 to run on ROS Noetic which uses Python 3. Or setting up a conda environment with the right packages for Pytorch. Or upgrading CUDA libraries. There are so many different libraries, packages, environments, etc. out there that it's almost overwhelming just getting your environment to simply work, let alone solving whatever problem you needed the environment for in the first place.
+
+I've heard that the [prevailing rule][11-7-20-1] for picking a font for a book is the following: if you notice the font, it's wrong.
+
+My opinion is that a similar rule holds true for a programming / simulation environment. If you consistently notice it or have to fix it, it's a bad environment. A good environment should enable you to focus completely on solving the actual problem rather than running in circles trying to fix the environment itself.
+
+
+[11-7-20-1]: https://ctan.math.illinois.edu/macros/luatex/latex/novel/doc/novel-documentation.html#hC.3

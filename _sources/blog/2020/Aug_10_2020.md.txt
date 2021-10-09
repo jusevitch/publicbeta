@@ -1,0 +1,20 @@
+---
+blogpost: true
+author: James Usevitch
+date: 2020-08-10
+category: Multiple
+tags: MATLAB, programming, mixing, audio, music
+---
+
+# August 10, 2020
+
+I can't believe that I have been using Matlab for almost 8 years now and have only just discovered the `axis square` command. This would have been so nice to know years ago...
+
+My brother recently informed me about the [Pancake 2][8-10-20-1] VST. It's a free plugin for creating highly customizable panning automation when mixing. I'm looking forward to trying it out more extensively. This led me down another rabbit hole looking for free binaural panners (which can place audio in 3D dimensions). Ultimately I found the [AMBEO Orbit][8-10-20-2] and the [Anaglyph][8-10-20-3] plugin. I've only had the chance to (briefly) try out AMBEO Orbit. I love the very intuitive interface, but I wasn't totally happy with the final sound--it seemed like AMBEO was taking away more of the sound quality than it was adding. I'll give it another chance though--I'll need more time to understand how to use it.
+
+What I'm really looking forward to trying is the [Spitfire Audio BBC Symphony Orchestra Discover][8-10-20-4] sample pack, which I was recently able to get for free by completing a survey (and waiting 2 weeks). For being free, it's pretty impressive. I'm excited to start experimenting with it.
+
+[8-10-20-1]: http://www.cableguys.com/pancake.html
+[8-10-20-2]: https://en-us.sennheiser.com/ambeo-orbit
+[8-10-20-3]: http://anaglyph.dalembert.upmc.fr/
+[8-10-20-4]: https://www.spitfireaudio.com/bbcso/discover/

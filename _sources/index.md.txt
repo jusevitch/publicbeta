@@ -1,0 +1,37 @@
+---
+title: Public Beta
+---
+
+# Welcome!
+
+This website is a collection of various resources for topics that I like learning about. It also has several curated collections of tools, suggestions, and commentaries. You can also find my blog here.
+
+Why this website? I'm the kind of person who's constantly exploring new ideas, topics, tools, and hobbies. This website is a place where I can organize and share what I find with others. I don't have time to dive into everything I find, but the hope is that someone else may find it useful.
+
+
+## Recent Blog Posts
+
+```{postlist} 3
+:author: James Usevitch
+:date: "%Y-%m-%d"
+:format: "{date} - {title}"
+:excerpts:
+```
+
+```{toctree}
+:maxdepth: 2
+:hidden:
+
+blog.md
+about.md
+```
+
+```{toctree}
+:caption: Resources
+:maxdepth: 2
+:hidden:
+
+Meta Learning <meta_learning/index_meta_learning.md>
+Control Theory <control_theory/index_control_theory.md>
+Music <music/index_music.md>
+```
