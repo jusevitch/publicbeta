@@ -1,0 +1,48 @@
+# Optimization
+
+Optimization is a fundamental skill across multiple engineering disciplines. Here are a few resources that I've found helpful for learning and using optimization tools.
+
+## Books
+
+* [**Convex Optimization**](https://web.stanford.edu/~boyd/cvxbook/) (Stephen Boyd and Lieven Vandenberghe). This book is dense, but it is a must-read for anyone serious about using optimization in advanced academic or industry settings. It teaches the fundamentals of how to prove a problem is convex, how to identify different classes of convex problems, and the guarantees on convergence to a global optimum that convex problems give. 
+
+* [**Engineering Design Optimization**](https://flow.byu.edu/publications/#tocAnchor-1-1-3) (Free PDF from the author in the "Textbooks" sections of the previous link). This is a great introduction to optimization methods for _nonconvex_ optimization problems. In other words, if your problem isn't convex, you'll likely be using the methods from this book. (The book does have a brief chapter about convex problems though). 
+
+
+## Software
+
+Many of the solvers I've found have come from looking at the [JuMP.jl](https://jump.dev/JuMP.jl/stable/installation/#Supported-solvers) list of supported solvers. It's worth a read if you're looking to explore options.
+
+Keep in mind that commercial solvers almost always outperform open source / free solvers. It's not a close comparison. If you have access to a commercial solver, use it.
+
+### Linear Programming
+
+* FOSS:
+    * [CLP](https://github.com/coin-or/Clp)
+    * [GLPK](https://www.gnu.org/software/glpk/)
+* Commercial / Non-FOSS:
+    * [Gurobi](https://www.gurobi.com/)
+    * [SoPlex](https://soplex.zib.de/)
+    * [MATLAB `linprog`](https://www.mathworks.com/help/optim/ug/linprog.html)
+
+### Mixed-Integer Linear Programming
+
+* FOSS:
+    * [CBC](https://github.com/coin-or/Cbc)
+    * [GLPK](https://www.gnu.org/software/glpk/)
+* Commercial / Non-FOSS:
+    * [Gurobi](https://www.gurobi.com/)
+    * [SCIP](https://www.scipopt.org/)
+    * [MATLAB `intlinprog`](https://www.mathworks.com/help/optim/ug/intlinprog.html)
+
+### Quadratic Programming
+
+* FOSS:
+    * [OSQP](https://osqp.org/)
+* Commercial / Non-FOSS:
+    * [Gurobi](https://www.gurobi.com/)
+    * [MATLAB `quadprog`](https://www.mathworks.com/help/optim/ug/quadprog.html)
+
+### Benchmarks of Optimization Software:
+
+* [Hans Mittelmann Benchmarks](http://plato.asu.edu/bench.html). Compares performance of LP, MILP, and SDP solvers, along with others. Note how poorly the FOSS solvers perform compared to the commercial options, in terms of both number of problems solved and average solution time.

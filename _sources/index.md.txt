@@ -33,5 +33,6 @@ about.md
 
 Meta Learning <meta_learning/index_meta_learning.md>
 Control Theory <control_theory/index_control_theory.md>
+Optimization <optimization/index_optimization.md>
 Music <music/index_music.md>
 ```
