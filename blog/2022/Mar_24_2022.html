@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Search Websites: Hacks for Career Planning &#8212; Public Beta</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+      
+<style type="text/css">
+  ul.ablog-archive {
+    list-style: none;
+    overflow: auto;
+    margin-left: 0px;
+  }
+  ul.ablog-archive li {
+    float: left;
+    margin-right: 5px;
+    font-size: 80%;
+  }
+  ul.postlist a {
+    font-style: italic;
+  }
+  ul.postlist-style-disc {
+    list-style-type: disc;
+  }
+  ul.postlist-style-none {
+    list-style-type: none;
+  }
+  ul.postlist-style-circle {
+    list-style-type: circle;
+  }
+</style>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Public Beta</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../blog.html">
+   Blog
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about.html">
+   About
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../meta_learning/index_meta_learning.html">
+   Meta Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../control_theory/index_control_theory.html">
+   Control Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../optimization/index_optimization.html">
+   Optimization
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/blog/2022/Mar_24_2022.md.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preamble-the-logic-of-getting-a-job">
+   Preamble: The Logic of Getting a Job
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-an-actionable-roadmap">
+   Getting an Actionable Roadmap
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#forecasting-market-demand-and-trends">
+   Forecasting Market Demand and Trends
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-truth-will-set-you-free">
+   The Truth Will Set You Free
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Job Search Websites: Hacks for Career Planning</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preamble-the-logic-of-getting-a-job">
+   Preamble: The Logic of Getting a Job
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-an-actionable-roadmap">
+   Getting an Actionable Roadmap
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#forecasting-market-demand-and-trends">
+   Forecasting Market Demand and Trends
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-truth-will-set-you-free">
+   The Truth Will Set You Free
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                 <div class="tex2jax_ignore mathjax_ignore section" id="job-search-websites-hacks-for-career-planning">
+<h1>Job Search Websites: Hacks for Career Planning<a class="headerlink" href="#job-search-websites-hacks-for-career-planning" title="Permalink to this headline">¶</a></h1>
+<p>I had a conversation with a BYU student today who is about to enter graduate school and ultimately wants to pursue a career in industry. During our conversation I mentioned a method for leveraging job search websites such as <a class="reference external" href="https://www.indeed.com/">Indeed.com</a> or <a class="reference external" href="https://www.monster.com/">Monster.com</a> to decide between pursuing a Masters’ or PhD degree. He had never used either of those websites before, but was excited to try out the method I mentioned.</p>
+<p>In hindsight the method might seem blindingly obvious, but it’s something that may not cross every students’ minds as they enter undergraduate or graduate school. Personally I found it tremendously helpful as I prepared for landing my first job after my PhD.</p>
+<div class="section" id="preamble-the-logic-of-getting-a-job">
+<h2>Preamble: The Logic of Getting a Job<a class="headerlink" href="#preamble-the-logic-of-getting-a-job" title="Permalink to this headline">¶</a></h2>
+<p>In my mind, this is the logic behind getting a job:</p>
+<ul class="simple">
+<li><p>When you graduate, you will want to get hired.</p></li>
+<li><p>Employers hire people who have particular skills that the employer needs or wants.</p></li>
+<li><p>If you don’t have the skills or experiences that an employer wants, they probably won’t hire you.</p></li>
+<li><p>If someone else has more skills or experiences that an employer wants than you, the employer will likely hire that other person instead of you.</p></li>
+<li><p>If you don’t gain the right skills or experiences during your school years, you will have a more difficult time getting hired when you graduate.</p></li>
+</ul>
+<p>The points above raise the following question: <strong>What skills / experiences do employers want?</strong></p>
+<p>In general, employers are pretty clear about what they want<a class="footnote-reference brackets" href="#employer" id="id1">1</a>. When they want to hire someone, they list these desired skills and experiences in job postings.
+The beautiful thing about these postings is that <strong>employers are telling you point blank what they want to see from you.</strong></p>
+<p>Employers often put their job postings on job search websites (like [Indeed.com])(https://www.indeed.com/) or <a class="reference external" href="https://www.monster.com/">Monster.com</a>) so that more people will see the posting and apply to it. These postings are totally free for anyone to view. If you really want to know what companies are looking for in their candidates, it’s all listed in their job postings.</p>
+<p>So what are some specific ways to use this information? Here are two that I’ve used:</p>
+<ol class="simple">
+<li><p>Getting an actionable roadmap</p></li>
+<li><p>Forecasting market demand and trends</p></li>
+</ol>
+</div>
+<div class="section" id="getting-an-actionable-roadmap">
+<h2>Getting an Actionable Roadmap<a class="headerlink" href="#getting-an-actionable-roadmap" title="Permalink to this headline">¶</a></h2>
+<p>You can use job search websites to make an actionable roadmap that will prepare you for your future career. This is especially useful if you feel lost and unsure of what to actually <em>do</em> to become better prepared to get a job.</p>
+<p>Here’s how it works:</p>
+<ol class="simple">
+<li><p>Go onto a job search website</p></li>
+<li><p>Find postings for jobs that you would absolutely love to land someday.</p></li>
+<li><p>Answer the following questions:</p>
+<ul class="simple">
+<li><p>What degree would give me the best chance of landing this job?</p></li>
+<li><p>What specific skills and experiences are required for this job?</p></li>
+<li><p>What specific skills and experiences would make me stand out from other applicants?</p></li>
+</ul>
+</li>
+<li><p>Compare your answers from step 3 with your current resume.</p>
+<ul class="simple">
+<li><p>What degree / skills / experiences on my resume match the posting requirements?</p></li>
+<li><p>What degree / skills / experiences from the posting are missing from my resume?</p></li>
+</ul>
+</li>
+</ol>
+<p>Notice that after finishing step 4 you should have a pretty clear roadmap of action items. Your objective is put those missing degrees, skills, and experiences onto your resume. How? Take classes, complete some projects, and do whatever is needed to be able to gain all those elements.</p>
+<p>Another pro tip is to do this not for just one or two postings, but for <em>dozens</em> of postings. Pay attention to the most requested skills in all of them. The more frequently a skill is required, the higher priority it should be on your roadmap. For example, if 20 out of 25 of your dream job postings are requiring C++ skills, then you should probably make sure not only that C++ is on your resume, but that you have some impressive projects posted publicly on Github and that you’re prepared to perform highly in coding interviews.</p>
+</div>
+<div class="section" id="forecasting-market-demand-and-trends">
+<h2>Forecasting Market Demand and Trends<a class="headerlink" href="#forecasting-market-demand-and-trends" title="Permalink to this headline">¶</a></h2>
+<p>Before diving into a particular career path or specializing in a specific area, it would be nice to have confidence that you’re making a good decision, right? For example, it would be helpful to know that people are hiring for the skills you’ll be learning, or that a particular career will give you a good salary.</p>
+<p>You can use job search postings to glean this kind of information and make more informed decisions about your career path.</p>
+<p>Let’s take an example. Say I want to specialize in <a class="reference external" href="https://ieeexplore.ieee.org/abstract/document/8796030/?casa_token=YdR-JdMlTjwAAAAA:A5jpH8hEhfG2HxkbPGSDz0IPDUJG3J0UndOVoPdqkCZ7IcU4I8dALTumxOYlMZNwyuV49jfQhFA">control barrier functions</a> (a slightly esoteric but super cool control theory topic that I worked on). What are the odds of getting hired in a job with control barrier functions? How much would I get paid?</p>
+<p>I can enter the search term <code class="docutils literal notranslate"><span class="pre">control</span> <span class="pre">barrier</span> <span class="pre">function</span></code> into the Indeed.com search bar and see what comes up. For a quick search on March 23, 2022, there is a grand total of zero (0) jobs hiring for control barrier function specialists. If I’m looking to get hired in industry, I’ll probably need to find some other skills to specialize in to have better odds of getting hired.</p>
+<p>But what about something else like, say, <code class="docutils literal notranslate"><span class="pre">robotics</span></code>? Indeed has over 65,000 job postings for robotics in the USA. Granted it’s a way more general term, but my odds of getting hired for robotics are far higher than my odds of getting hired for control barrier functions.</p>
+<p>This is even more effective when you monitor the search results over a period of weeks, months, or even years. Tracking the number of postings for particular areas can help you answer questions such as</p>
+<ul class="simple">
+<li><p>How many companies are hiring in this area?</p></li>
+<li><p>Is the demand growing or shrinking over time?</p></li>
+</ul>
+</div>
+<div class="section" id="the-truth-will-set-you-free">
+<h2>The Truth Will Set You Free<a class="headerlink" href="#the-truth-will-set-you-free" title="Permalink to this headline">¶</a></h2>
+<p>Again, <strong>employers are telling you point blank what they want to see from you.</strong> It’s all out there on the job postings they make publicly available. The only question remaining is whether you will take the time to process that information and act on it.</p>
+<p>Granted, it can be hard to add this to your to-do list when you’re swamped with everything else going on in school–homework, exams, projects, etc. But investing in researching what will maximize your chances of getting hired will pay huge dividends as you decide what skills to pursue.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="employer"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>If an employer isn’t clear about what they want, they’re shooting themselves in the foot.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+<div class="section">
+    
+
+<div class="section">
+  <span style="float: left">
+     Previous:
+    
+    <a href="../2021/Sep_29_2021.html">
+       First Post Using Sphinx Book Theme
+    </a>
+    
+  </span>
+  <span>&nbsp;</span>
+  <span style="float: right">
+    
+  </span>
+</div>
+  
+</div>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By James Usevitch<br/>
+    
+        &copy; Copyright 2021, James Usevitch.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

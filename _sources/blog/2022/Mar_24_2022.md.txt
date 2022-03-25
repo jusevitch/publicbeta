@@ -1,0 +1,84 @@
+---
+blogpost: true
+author: James Usevitch
+date: 2022-03-24
+---
+
+# Job Search Websites: Hacks for Career Planning
+
+I had a conversation with a BYU student today who is about to enter graduate school and ultimately wants to pursue a career in industry. During our conversation I mentioned a method for leveraging job search websites such as [Indeed.com](https://www.indeed.com/) or [Monster.com](https://www.monster.com/) to decide between pursuing a Masters' or PhD degree. He had never used either of those websites before, but was excited to try out the method I mentioned.
+
+In hindsight the method might seem blindingly obvious, but it's something that may not cross every students' minds as they enter undergraduate or graduate school. Personally I found it tremendously helpful as I prepared for landing my first job after my PhD.
+
+## Preamble: The Logic of Getting a Job
+
+In my mind, this is the logic behind getting a job:
+
+* When you graduate, you will want to get hired.
+
+* Employers hire people who have particular skills that the employer needs or wants.
+
+* If you don't have the skills or experiences that an employer wants, they probably won't hire you.
+
+* If someone else has more skills or experiences that an employer wants than you, the employer will likely hire that other person instead of you.
+
+* If you don't gain the right skills or experiences during your school years, you will have a more difficult time getting hired when you graduate.
+
+The points above raise the following question: **What skills / experiences do employers want?**
+
+In general, employers are pretty clear about what they want[^employer]. When they want to hire someone, they list these desired skills and experiences in job postings.
+The beautiful thing about these postings is that **employers are telling you point blank what they want to see from you.**
+
+[^employer]: If an employer isn't clear about what they want, they're shooting themselves in the foot.
+
+Employers often put their job postings on job search websites (like [Indeed.com])(https://www.indeed.com/) or [Monster.com](https://www.monster.com/)) so that more people will see the posting and apply to it. These postings are totally free for anyone to view. If you really want to know what companies are looking for in their candidates, it's all listed in their job postings. 
+
+
+So what are some specific ways to use this information? Here are two that I've used:
+1. Getting an actionable roadmap
+2. Forecasting market demand and trends
+
+## Getting an Actionable Roadmap
+
+You can use job search websites to make an actionable roadmap that will prepare you for your future career. This is especially useful if you feel lost and unsure of what to actually _do_ to become better prepared to get a job.
+
+Here's how it works:
+
+1. Go onto a job search website
+2. Find postings for jobs that you would absolutely love to land someday.
+3. Answer the following questions:
+    * What degree would give me the best chance of landing this job?
+    * What specific skills and experiences are required for this job?
+    * What specific skills and experiences would make me stand out from other applicants?
+4. Compare your answers from step 3 with your current resume.
+    * What degree / skills / experiences on my resume match the posting requirements?
+    * What degree / skills / experiences from the posting are missing from my resume?
+
+Notice that after finishing step 4 you should have a pretty clear roadmap of action items. Your objective is put those missing degrees, skills, and experiences onto your resume. How? Take classes, complete some projects, and do whatever is needed to be able to gain all those elements.
+
+Another pro tip is to do this not for just one or two postings, but for _dozens_ of postings. Pay attention to the most requested skills in all of them. The more frequently a skill is required, the higher priority it should be on your roadmap. For example, if 20 out of 25 of your dream job postings are requiring C++ skills, then you should probably make sure not only that C++ is on your resume, but that you have some impressive projects posted publicly on Github and that you're prepared to perform highly in coding interviews.
+
+
+
+## Forecasting Market Demand and Trends
+
+Before diving into a particular career path or specializing in a specific area, it would be nice to have confidence that you're making a good decision, right? For example, it would be helpful to know that people are hiring for the skills you'll be learning, or that a particular career will give you a good salary.
+
+You can use job search postings to glean this kind of information and make more informed decisions about your career path.
+
+Let's take an example. Say I want to specialize in [control barrier functions](https://ieeexplore.ieee.org/abstract/document/8796030/?casa_token=YdR-JdMlTjwAAAAA:A5jpH8hEhfG2HxkbPGSDz0IPDUJG3J0UndOVoPdqkCZ7IcU4I8dALTumxOYlMZNwyuV49jfQhFA) (a slightly esoteric but super cool control theory topic that I worked on). What are the odds of getting hired in a job with control barrier functions? How much would I get paid?
+
+I can enter the search term `control barrier function` into the Indeed.com search bar and see what comes up. For a quick search on March 23, 2022, there is a grand total of zero (0) jobs hiring for control barrier function specialists. If I'm looking to get hired in industry, I'll probably need to find some other skills to specialize in to have better odds of getting hired.
+
+But what about something else like, say, `robotics`? Indeed has over 65,000 job postings for robotics in the USA. Granted it's a way more general term, but my odds of getting hired for robotics are far higher than my odds of getting hired for control barrier functions.
+
+This is even more effective when you monitor the search results over a period of weeks, months, or even years. Tracking the number of postings for particular areas can help you answer questions such as
+* How many companies are hiring in this area?
+* Is the demand growing or shrinking over time?
+
+
+## The Truth Will Set You Free
+
+Again, **employers are telling you point blank what they want to see from you.** It's all out there on the job postings they make publicly available. The only question remaining is whether you will take the time to process that information and act on it.
+
+Granted, it can be hard to add this to your to-do list when you're swamped with everything else going on in school--homework, exams, projects, etc. But investing in researching what will maximize your chances of getting hired will pay huge dividends as you decide what skills to pursue.
