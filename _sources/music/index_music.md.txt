@@ -1,9 +1,0 @@
-# Music Resources
-
-I enjoy dabbling in music when I have the time. The following pages contain various resources I use when doing music.
-
-```{toctree}
-:maxdepth: 1
-
-daws_vsts_software.md
-```
