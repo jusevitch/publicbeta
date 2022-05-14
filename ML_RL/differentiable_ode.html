@@ -30,6 +30,8 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -254,58 +256,58 @@ title="Fullscreen mode"
   </span>
 
 </button>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/ML_RL/differentiable_ode.md.txt"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
 >
   
 
 <span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
+  <i class="fas fa-list"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
 
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iterative-methods">
+   Iterative Methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#differentiation-mathematics">
+   Differentiation Mathematics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#euler-s-formula">
+     Euler’s Formula
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rk4">
+     RK4
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methods-for-numerical-integration">
+   Methods for Numerical Integration
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -317,6 +319,41 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iterative-methods">
+   Iterative Methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#differentiation-mathematics">
+   Differentiation Mathematics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#euler-s-formula">
+     Euler’s Formula
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rk4">
+     RK4
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methods-for-numerical-integration">
+   Methods for Numerical Integration
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -326,6 +363,97 @@ title="Print to PDF"
                  <div class="tex2jax_ignore mathjax_ignore section" id="differentiable-ode-solvers">
 <h1>Differentiable ODE Solvers<a class="headerlink" href="#differentiable-ode-solvers" title="Permalink to this headline">#</a></h1>
 <p>WIP</p>
+<div class="admonition-it-s-a-mess admonition">
+<p class="admonition-title">It’s a mess…</p>
+<p>These notes need to be cleaned up. For the time being, I’m throwing them below at the speed of thought.</p>
+</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\bmx}[1]{\begin{bmatrix}#1\end{bmatrix}}\]</div>
+<div class="section" id="iterative-methods">
+<h2>Iterative Methods<a class="headerlink" href="#iterative-methods" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="differentiation-mathematics">
+<h2>Differentiation Mathematics<a class="headerlink" href="#differentiation-mathematics" title="Permalink to this headline">#</a></h2>
+<p>Consider the parameterized dynamical system <span class="math notranslate nohighlight">\(\dot{x} = f(x,p,t)\)</span>. Here, <span class="math notranslate nohighlight">\(p\)</span> is the vector of parameters.</p>
+<p>Define <span class="math notranslate nohighlight">\(S(p,t) \triangleq \frac{\partial x(p,t)}{\partial p}\)</span>. This is known as the <em>sensitivity matrix</em>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\dot{x} &amp;= f(x,p,t),\\
+\dot{S} &amp;= \frac{\partial f(x,p,t)}{\partial x} S + \frac{\partial f(x,p,t)}{\partial p}.
+\end{align}\end{split}\]</div>
+<div class="section" id="euler-s-formula">
+<h3>Euler’s Formula<a class="headerlink" href="#euler-s-formula" title="Permalink to this headline">#</a></h3>
+<p>WIP</p>
+</div>
+<div class="section" id="rk4">
+<h3>RK4<a class="headerlink" href="#rk4" title="Permalink to this headline">#</a></h3>
+<p>The math for differentiating through Runge-Kutta methods is slightly more involved.</p>
+<p>First, here’s the classical Runge-Kutta method (RK4):</p>
+<div class="math notranslate nohighlight" id="equation-rk4">
+<span class="eqno">(1)<a class="headerlink" href="#equation-rk4" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{align}
+x_{n+1} &amp;= x_n + \frac{h}{6}(k_1 + 2k_2 + 2k_3 + k_4), \\
+k_1 &amp;\triangleq f(x_n,p,t),\\
+k_2 &amp;\triangleq f(x_n+h\frac{k_1}{2},p,t_n+\frac{h}{2}),\\
+k_3 &amp;\triangleq f(x_n+h\frac{k_2}{2},p,t_n+\frac{h}{2}),\\
+k_4 &amp;\triangleq f(x_n+hk_3,p,t_n+h),\\
+\end{align}\end{split}\]</div>
+<p>To solve for <span class="math notranslate nohighlight">\(S(p,t)\)</span>, there are two possible methods:</p>
+<ol class="simple">
+<li><p>Propagate <span class="math notranslate nohighlight">\(S(p,t)\)</span> using RK4</p></li>
+<li><p>Compute <span class="math notranslate nohighlight">\(\frac{\partial k_i}{\partial p}\)</span> for <span class="math notranslate nohighlight">\(i=\{1,2,3,4\}\)</span>.</p></li>
+</ol>
+<p><em>Method 1:</em> The dynamics for <span class="math notranslate nohighlight">\(S(p,t)\)</span> depend on <span class="math notranslate nohighlight">\(x\)</span> in addition to <span class="math notranslate nohighlight">\(S\)</span>. Let’s define a new state:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}z(p,t) \triangleq \bmx{x(p,t) \\ S(p,t)}\end{split}\]</div>
+<p>Next, let’s give the new state some dynamics:</p>
+<div class="math notranslate nohighlight" id="equation-zdynamics">
+<span class="eqno">(2)<a class="headerlink" href="#equation-zdynamics" title="Permalink to this equation">#</a></span>\[\begin{split}\dot{z} &amp;= g(z,p,t),
+&amp;= \bmx{f(x,p,t) \\ \frac{\partial f(x,p,t)}{\partial x} S + \frac{\partial f(x,p,t)}{\partial p}}\end{split}\]</div>
+<p>Fantastic. Let’s apply <a class="reference internal" href="#equation-rk4">(1)</a> to the dynamics in <a class="reference internal" href="#equation-zdynamics">(2)</a>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}z_{n+1} &amp;= z_n + \frac{h}{2}(k_1 + 2k_2 + 2k_3 + k_4), \\
+k_1 &amp;\triangleq g(z_n,p,t),\\
+k_2 &amp;\triangleq g(z_n+h\frac{k_1}{2},p,t_n+\frac{h}{2}),\\
+k_3 &amp;\triangleq g(z_n+h\frac{k_2}{2},p,t_n+\frac{h}{2}),\\
+k_4 &amp;\triangleq g(z_n+hk3,p,t_n+h).\end{split}\]</div>
+<p>That’s a good start, but let’s expand the <span class="math notranslate nohighlight">\(z(p,t)\)</span> terms in each <span class="math notranslate nohighlight">\(k_i\)</span> expression to see what’s going on under the hood.
+Notice that we can add <span class="math notranslate nohighlight">\(z(p_1,t_1) + g(x_2,p_2,t_2)\)</span> together like this:</p>
+<!-- ```{math}
+\begin{align}
+g(x_1,p_1,t_1) + g(x_2,p_2,t_2) &= \bmx{f(x_1,p_1,t_1) \\ \frac{\partial f(x_1,p_1,t_1)}{\partial x} S_1 + \frac{\partial f(x_1,p_1,t_1)}{\partial p}} + \bmx{f(x_2,p_2,t_2) \\ \frac{\partial f(x_2,p_2,t_2)}{\partial x} S_2 + \frac{\partial f(x_2,p_2,t_2)}{\partial p}}  \\
+&= \bmx{f(x_1,p_1,t_1) + f(x_2,p_2,t_2) \\ \frac{\partial f(x_1,p_1,t_1)}{\partial x} S_1 + \frac{\partial f(x_1,p_1,t_1)}{\partial p} + \frac{\partial f(x_2,p_2,t_2)}{\partial x} S_2 + \frac{\partial f(x_2,p_2,t_2)}{\partial p}} 
+\end{align}
+``` -->
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+z(p_1,t_1) + g(x_2,p_2,t_2) &amp;= \bmx{x(p_1,t_1) \\ S(p_1,t_1)} + \bmx{f(x_2,p_2,t_2) \\ \frac{\partial f(x_2,p_2,t_2)}{\partial x} S(p_2,t_2) + \frac{\partial f(x_2,p_2,t_2)}{\partial p}}  \\
+&amp;= \bmx{x(p_1,t_1) + f(x_2,p_2,t_2) \\ S(p_1,t_1) + \frac{\partial f(x_2,p_2,t_2)}{\partial x} S(p_2,t_2) + \frac{\partial f(x_2,p_2,t_2)}{\partial p}} 
+\end{align}\end{split}\]</div>
+<p>If you squint, the outcome of that sum has sort of an “<span class="math notranslate nohighlight">\(x\)</span>-component” and an “<span class="math notranslate nohighlight">\(S\)</span>-component” just like the state <span class="math notranslate nohighlight">\(z(p,t)\)</span>.
+We’ll need some abbreviated notation to keep things readable. Let’s define <span class="math notranslate nohighlight">\(k_{i}^x\)</span> as the “<span class="math notranslate nohighlight">\(x\)</span>-component” of <span class="math notranslate nohighlight">\(k_i\)</span> and <span class="math notranslate nohighlight">\(k_{i}^S\)</span> as the “<span class="math notranslate nohighlight">\(S\)</span>-component” portion of <span class="math notranslate nohighlight">\(k_i\)</span>.<a class="footnote-reference brackets" href="#imprecise" id="id1">1</a></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}k_1 &amp;\triangleq \bmx{f(x_n,p,t_n) \\ \frac{\partial f(x_n,p,t_n)}{\partial x} S_n + \frac{\partial f(x_n,p,t_n)}{\partial p}},\\
+k_2 &amp;\triangleq \bmx{f(x_n + h\frac{k_1^x}{2},p,t_n+\frac{h}{2}) \\ \frac{\partial f(x_n+\frac{k_1^x}{2},p,t_n+\frac{h}{2})}{\partial x} (S + h\frac{k_1^S}{2}) + \frac{\partial f(x_n+h\frac{k_1^x}{2},p,t_n+\frac{h}{2})}{\partial p}},\\
+k_3 &amp;\triangleq \bmx{f(x_n + h\frac{k_2^x}{2},p,t_n+\frac{h}{2}) \\ \frac{\partial f(x_n+\frac{k_2^x}{2},p,t_n+\frac{h}{2})}{\partial x} (S + h\frac{k_2^S}{2}) + \frac{\partial f(x_n+h\frac{k_2^x}{2},p,t_n+\frac{h}{2})}{\partial p}},\\
+k_4 &amp;\triangleq \bmx{f(x_n+hk_3^x,p,t_n+h) \\ \frac{\partial f(x_n+hk_3^x,p,t_n+h)}{\partial x} (S_n + hk_3^S) + \frac{\partial f(x_n+hk_3^x,p,t_n+h)}{\partial p}},\\\end{split}\]</div>
+<p>A little messier than I expected, but nothing too scary.</p>
+<p><em>Method 2:</em> WIP</p>
+</div>
+</div>
+<div class="section" id="methods-for-numerical-integration">
+<h2>Methods for Numerical Integration<a class="headerlink" href="#methods-for-numerical-integration" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Simpson%27s_rule">Simpson’s Rule</a></p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Newton%E2%80%93Cotes_formulas">Newton-Cotes Formulas</a></p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Gaussian_quadrature">Gaussian Quadrature</a></p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Gauss%E2%80%93Kronrod_quadrature_formula">Gauss-Kronrod Quadrature</a></p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Clenshaw%E2%80%93Curtis_quadrature">Clenshaw-Curtis Quadrature</a></p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="imprecise"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>I know, I know, I’m being super hand-wavy and imprecise here. This is just an informal overview.</p>
+</dd>
+</dl>
+</div>
 </div>
 
 <div class="section">
