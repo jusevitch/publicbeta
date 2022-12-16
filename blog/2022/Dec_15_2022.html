@@ -585,7 +585,7 @@ title="Fullscreen mode"
 </ol>
 <p>The bottom line is that this technique does not result in truly private fields. However there’s a few reasons why I still like the idea of <code class="docutils literal notranslate"><span class="pre">var&quot;#name&quot;</span></code> syntax for fields you don’t want other people touching:</p>
 <ul class="simple">
-<li><p>Beginners to Julia will likely be unaware of <code class="docutils literal notranslate"><span class="pre">&#64;var_str</span></code> and <code class="docutils literal notranslate"><span class="pre">getfield</span></code>. They will have no idea how to access the value of fields beginning with a hashtag.</p></li>
+<li><p>Many Julia users will likely be unaware of <code class="docutils literal notranslate"><span class="pre">&#64;var_str</span></code> and <code class="docutils literal notranslate"><span class="pre">getfield</span></code>. They will have no idea how to access the value of fields beginning with a hashtag.</p></li>
 <li><p>Similar to underscores in Python, the <code class="docutils literal notranslate"><span class="pre">var&quot;#name&quot;</span></code> method communicates to advanced users that those fields shouldn’t be touched unless they know what they’re doing. It also makes the fieldname a bit more obnoxious and ugly to type, which subtly discourages them from accessing it in their code.</p></li>
 </ul>
 <p>The only disadvantage of this method I’m aware of is having to write <code class="docutils literal notranslate"><span class="pre">var&quot;#name&quot;</span></code> everywhere in your own code. But I suspect a macro could take care of that fairly easily. I’ll leave that for another blog post someday.</p>
