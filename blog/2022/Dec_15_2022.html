@@ -1,0 +1,665 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JuliaLang and Private Struct Fields &#8212; Public Beta</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+      
+<style type="text/css">
+  ul.ablog-archive {
+    list-style: none;
+    overflow: auto;
+    margin-left: 0px;
+  }
+  ul.ablog-archive li {
+    float: left;
+    margin-right: 5px;
+    font-size: 80%;
+  }
+  ul.postlist a {
+    font-style: italic;
+  }
+  ul.postlist-style-disc {
+    list-style-type: disc;
+  }
+  ul.postlist-style-none {
+    list-style-type: none;
+  }
+  ul.postlist-style-circle {
+    list-style-type: circle;
+  }
+</style>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Public Beta</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../blog.html">
+   Blog
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about.html">
+   About
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../meta_learning/index_meta_learning.html">
+   Meta Learning
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../julia/julia_index.html">
+   JuliaLang
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../julia/allocations.html">
+     Allocations and Memory Management
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../control_theory/index_control_theory.html">
+   Control Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../optimization/index_optimization.html">
+   Optimization
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../ML_RL/index_ML_RL.html">
+   ML / RL
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ML_RL/differentiable_ode.html">
+     Differentiable ODE Solvers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../music/index_music.html">
+   Music
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../music/music_software.html">
+     Favorite Music Software
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#technique-1-create-new-methods-for-setproperty-and-getproperty">
+   Technique 1: Create new methods for
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     setproperty!
+    </span>
+   </code>
+   and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     getproperty
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#technique-2-use-var-str">
+   Technique 2: Use
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     @var_str
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>JuliaLang and Private Struct Fields</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#technique-1-create-new-methods-for-setproperty-and-getproperty">
+   Technique 1: Create new methods for
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     setproperty!
+    </span>
+   </code>
+   and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     getproperty
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#technique-2-use-var-str">
+   Technique 2: Use
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     @var_str
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                 <div class="tex2jax_ignore mathjax_ignore section" id="julialang-and-private-struct-fields">
+<h1>JuliaLang and Private Struct Fields<a class="headerlink" href="#julialang-and-private-struct-fields" title="Permalink to this headline">#</a></h1>
+<p><em>TL;DR: There are none. But we can try anyways.</em></p>
+<p>It’s a well-known fact that Julia does not support private fields in structs<a class="footnote-reference brackets" href="#noprivate" id="id1">1</a>. It’s somewhat similar to Python in this regard: Package maintainers can warn people not to touch certain parts of the code, but ultimately nothing’s stopping a curious user from poking around.</p>
+<p>That answer may not be very satisfying to some people though. What’s the closest we can get to private fields? Can we have a few slightly stronger options than putting underscores in front of field names? In this post I’ll share two techniques I’m aware of that can discourage (but not stop) users from accessing certain struct fields:</p>
+<ol class="simple">
+<li><p>Create methods for <code class="docutils literal notranslate"><span class="pre">setproperty!</span></code> and <code class="docutils literal notranslate"><span class="pre">getproperty</span></code></p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">&#64;var_str</span></code></p></li>
+</ol>
+<p>I make no claims about whether or not these methods are useful or idiomatic.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the code blocks that follow I assume that each line is entered into the Julia REPL, but I omit the <code class="docutils literal notranslate"><span class="pre">julia&gt;</span></code> prompt text. Output is shown as commented text after the inputs.</p>
+</div>
+<div class="section" id="technique-1-create-new-methods-for-setproperty-and-getproperty">
+<h2>Technique 1: Create new methods for <code class="docutils literal notranslate"><span class="pre">setproperty!</span></code> and <code class="docutils literal notranslate"><span class="pre">getproperty</span></code><a class="headerlink" href="#technique-1-create-new-methods-for-setproperty-and-getproperty" title="Permalink to this headline">#</a></h2>
+<p>First, the traditional method. Let’s create a struct with two fields:</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="kt">mystruct</span>
+    <span class="n">field1</span>
+    <span class="n">field2</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<p>We can now create instances of this struct:</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">mystruct</span><span class="p">(</span><span class="s">&quot;value_1&quot;</span> <span class="p">,</span> <span class="s">&quot;value_2&quot;</span><span class="p">)</span>
+
+<span class="c"># mystruct(&quot;value_1&quot;, &quot;value_2&quot;)</span>
+</pre></div>
+</div>
+<p>Suppose we really don’t want users accessing <code class="docutils literal notranslate"><span class="pre">x.field2</span></code>. Recall that Julia translates <code class="docutils literal notranslate"><span class="pre">x.field2</span></code> into the function call <code class="docutils literal notranslate"><span class="pre">Base.getproperty(x,</span> <span class="pre">:field2)</span></code>. Using the powers of multiple dispatch, we can specialize the <code class="docutils literal notranslate"><span class="pre">Base.getproperty</span></code> to behave differently when <code class="docutils literal notranslate"><span class="pre">x</span></code> is of type <code class="docutils literal notranslate"><span class="pre">mystruct</span></code>:</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="n">Base</span><span class="o">.</span><span class="n">getproperty</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="kt">mystruct</span><span class="p">,</span> <span class="n">y</span><span class="o">::</span><span class="kt">Symbol</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">y</span> <span class="o">===</span> <span class="ss">:field2</span>
+        <span class="n">error</span><span class="p">(</span><span class="s">&quot;This field is private.&quot;</span><span class="p">)</span>
+    <span class="k">else</span>
+        <span class="n">getfield</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<p>This code tests to see if the field being accessed is <code class="docutils literal notranslate"><span class="pre">field2</span></code>. If so, it errors. Otherwise it returns the field.</p>
+<p>Does it work?</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">field2</span>
+
+<span class="c"># ERROR: This field is private.</span>
+</pre></div>
+</div>
+<p>Fantastic. How about accessing <code class="docutils literal notranslate"><span class="pre">field1</span></code>?</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">field1</span>
+
+<span class="c"># &quot;value_1&quot;</span>
+</pre></div>
+</div>
+<p>Success! Users can access <code class="docutils literal notranslate"><span class="pre">x.field1</span></code>, but they can no longer access <code class="docutils literal notranslate"><span class="pre">x.field2</span></code> without getting yelled at.</p>
+<p>Unfortunately the Achilles heel to this method is glaringly apparent in our method definition for <code class="docutils literal notranslate"><span class="pre">Base.getproperty</span></code> above. Remember that call <code class="docutils literal notranslate"><span class="pre">getfield(x,y)</span></code>? What happens if we use that function directly with <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">field2</span></code>?</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">getfield</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="ss">:field2</span><span class="p">)</span>
+
+<span class="c"># &quot;value_2&quot;</span>
+</pre></div>
+</div>
+<p>Drat. Well, it’s not truly private, but this at least puts a little extra friction into accessing <code class="docutils literal notranslate"><span class="pre">x.field2</span></code>. Some users likely won’t even be aware that <code class="docutils literal notranslate"><span class="pre">getfield</span></code> exists.</p>
+<p>Now if we were dealing with a <em>mutable</em> struct, there would be one more aspect to worry about: setting field values. The method above prevents users from <em>accessing</em> field values, but doesn’t prevent the user from <em>changing</em> them. As an example, let’s try creating a new mutable struct and using the <code class="docutils literal notranslate"><span class="pre">getproperty</span></code> trick above to discourage access to <code class="docutils literal notranslate"><span class="pre">field2</span></code>:</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">mutable struct</span> <span class="kt">mutablestruct</span>
+    <span class="n">field1</span>
+    <span class="n">field2</span>
+<span class="k">end</span>
+
+<span class="k">function</span> <span class="n">Base</span><span class="o">.</span><span class="n">getproperty</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="kt">mutablestruct</span><span class="p">,</span> <span class="n">y</span><span class="o">::</span><span class="kt">Symbol</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">y</span> <span class="o">===</span> <span class="ss">:field2</span>
+        <span class="n">error</span><span class="p">(</span><span class="s">&quot;This field is private.&quot;</span><span class="p">)</span>
+    <span class="k">else</span>
+        <span class="n">getfield</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">mutablestruct</span><span class="p">(</span><span class="s">&quot;value_1&quot;</span><span class="p">,</span> <span class="s">&quot;value_2&quot;</span><span class="p">)</span>
+
+<span class="c"># mutablestruct(&quot;value_1&quot;, &quot;value_2&quot;)</span>
+</pre></div>
+</div>
+<p>Can we access <code class="docutils literal notranslate"><span class="pre">x.field2</span></code>?</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">field2</span>
+
+<span class="c"># ERROR: This field is private.</span>
+</pre></div>
+</div>
+<p>Awesome. Can we set <code class="docutils literal notranslate"><span class="pre">x.field2</span></code> to a different value?</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">field2</span> <span class="o">=</span> <span class="s">&quot;not_value_2&quot;</span>
+
+<span class="c"># &quot;not_value_2&quot;</span>
+</pre></div>
+</div>
+<p>Uh…</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">getfield</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="ss">:field2</span><span class="p">)</span>
+
+<span class="c"># &quot;not_value_2&quot;</span>
+</pre></div>
+</div>
+<p>What?</p>
+<p>We can’t access the field with <code class="docutils literal notranslate"><span class="pre">.</span></code> notation, but we can change the field value with <code class="docutils literal notranslate"><span class="pre">.</span></code> notation. Clearly we missed something. That “something” is <a class="reference external" href="https://docs.julialang.org/en/v1/base/base/#Base.setproperty%21">the <code class="docutils literal notranslate"><span class="pre">setproperty!</span></code> function</a>. Analogously to how <code class="docutils literal notranslate"><span class="pre">x.field2</span></code> is parsed into <code class="docutils literal notranslate"><span class="pre">getproperty(x,</span> <span class="pre">:field2)</span></code>, the expression <code class="docutils literal notranslate"><span class="pre">x.field2</span> <span class="pre">=</span> <span class="pre">&quot;not_value_2&quot;</span></code> is parsed into <code class="docutils literal notranslate"><span class="pre">setproperty!(x,</span> <span class="pre">:field2,</span> <span class="pre">&quot;not_value_2&quot;)</span></code>. This means we need to create a new method for <code class="docutils literal notranslate"><span class="pre">Base.setproperty!</span></code> in order to discourage others from changing the value of <code class="docutils literal notranslate"><span class="pre">field2</span></code>:</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="n">Base</span><span class="o">.</span><span class="n">setproperty!</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="kt">mutablestruct</span><span class="p">,</span> <span class="n">y</span><span class="o">::</span><span class="kt">Symbol</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">y</span> <span class="o">===</span> <span class="ss">:field2</span>
+        <span class="n">error</span><span class="p">(</span><span class="s">&quot;This field is private.&quot;</span><span class="p">)</span>
+    <span class="k">else</span>
+        <span class="n">setfield!</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<p>Now let’s test changing <code class="docutils literal notranslate"><span class="pre">x.field2</span></code>:</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">field2</span> <span class="o">=</span> <span class="s">&quot;really_not_value_2&quot;</span>
+
+<span class="c"># ERROR: This field is private.</span>
+</pre></div>
+</div>
+<p>Mission accomplished. But do note that this also has its Kryptonite: the <code class="docutils literal notranslate"><span class="pre">setfield!</span></code> function. Similar to <code class="docutils literal notranslate"><span class="pre">getfield</span></code>, there’s nothing stopping a determined user from calling <code class="docutils literal notranslate"><span class="pre">setfield!(x,</span> <span class="pre">:field2,</span> <span class="pre">&quot;really_not_value_2&quot;)</span></code> to do whatever they want to that field.</p>
+</div>
+<div class="section" id="technique-2-use-var-str">
+<h2>Technique 2: Use <code class="docutils literal notranslate"><span class="pre">&#64;var_str</span></code><a class="headerlink" href="#technique-2-use-var-str" title="Permalink to this headline">#</a></h2>
+<p>This is going to start out sounding like a tangent, but I promise it directly relates to making struct fields more “private”.</p>
+<p>Have you ever stopped to look at the typenames of closures / anonymous functions in the Julia REPL?<a class="footnote-reference brackets" href="#haveyou" id="id2">2</a></p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-&gt;</span> <span class="mi">2</span><span class="n">x</span>
+<span class="n">typeof</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="c"># var&quot;#1#2&quot;</span>
+</pre></div>
+</div>
+<p>Interesting. What is is this <code class="docutils literal notranslate"><span class="pre">var&quot;#1#2</span></code> type? We can get some help from the Julia REPL by <a class="reference external" href="https://docs.julialang.org/en/v1/manual/metaprogramming/#meta-non-standard-string-literals">remembering</a> that prefixed string literals <code class="docutils literal notranslate"><span class="pre">var&quot;adsf&quot;</span></code> are actually parsed as calls to <code class="docutils literal notranslate"><span class="pre">&#64;var_str</span></code> (just like <code class="docutils literal notranslate"><span class="pre">r&quot;adsf&quot;</span></code> is parsed as a call to the <code class="docutils literal notranslate"><span class="pre">&#64;r_str</span></code> macro). Let’s look into it:</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="o">?</span><span class="nd">@var_str</span>
+
+<span class="cm">#=</span>
+
+<span class="cm">search: @var_str</span>
+
+<span class="cm">  var</span>
+
+<span class="cm">  The syntax var&quot;#example#&quot; refers to a variable named Symbol(&quot;#example#&quot;), even though #example# is not a valid Julia identifier name.</span>
+
+<span class="cm">  This can be useful for interoperability with programming languages which have different rules for the construction of valid identifiers. For example, to refer to the R variable draw.segments, you can</span>
+<span class="cm">  use var&quot;draw.segments&quot; in your Julia code.</span>
+
+<span class="cm">  It is also used to show julia source code which has gone through macro hygiene or otherwise contains variable names which can&#39;t be parsed normally.</span>
+
+<span class="cm">  Note that this syntax requires parser support so it is expanded directly by the parser rather than being implemented as a normal string macro @var_str.</span>
+
+<span class="cm">  │ Julia 1.3</span>
+<span class="cm">  │</span>
+<span class="cm">  │  This syntax requires at least Julia 1.3.</span>
+
+<span class="cm">=#</span>
+</pre></div>
+</div>
+<p>You can read more of the same in the Julia documentation entry for <a class="reference external" href="https://docs.julialang.org/en/v1/base/base/#var%22name%22"><code class="docutils literal notranslate"><span class="pre">var&quot;name&quot;</span></code></a>.</p>
+<p>The bottom line is that the <code class="docutils literal notranslate"><span class="pre">var&quot;name&quot;</span></code> syntax can be used to create names that would otherwise be illegal in Julia. For example, despite the Julia REPL being able to autocomplete a <a class="reference external" href="https://docs.julialang.org/en/v1/manual/unicode-input/">large list of Unicode</a>, not all of this Unicode can be parsed by the interpreter. Take for example the <a class="reference external" href="https://en.wikipedia.org/wiki/Double_turnstile">Double Turnstile</a> (LaTeX: <code class="docutils literal notranslate"><span class="pre">\vDash</span></code>) that’s used in formal methods literature:</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">⊨</span><span class="p">(</span><span class="n">args</span><span class="o">...</span><span class="p">)</span> <span class="o">=</span> <span class="n">all</span><span class="p">([</span><span class="n">args</span><span class="o">...</span><span class="p">])</span>
+
+<span class="cm">#=</span>
+
+<span class="cm">ERROR: syntax: invalid character &quot;⊨&quot; near column 1</span>
+<span class="cm">Stacktrace:</span>
+<span class="cm"> [1] top-level scope</span>
+<span class="cm">   @ none:1</span>
+
+<span class="cm">=#</span>
+</pre></div>
+</div>
+<p>It turns out this is one of the characters that Julia <a class="reference external" href="https://discourse.julialang.org/t/why-is-an-invalid-character/45371/3">doesn’t parse yet</a><a class="footnote-reference brackets" href="#noparse" id="id3">3</a>. But have no fear–<code class="docutils literal notranslate"><span class="pre">var&quot;name&quot;</span></code> syntax is here:</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="sa">var</span><span class="s">&quot;⊨&quot;</span><span class="p">(</span><span class="n">args</span><span class="o">...</span><span class="p">)</span> <span class="o">=</span> <span class="n">all</span><span class="p">([</span><span class="n">args</span><span class="o">...</span><span class="p">])</span>
+<span class="sa">var</span><span class="s">&quot;⊨&quot;</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span> <span class="nb">true</span><span class="p">,</span> <span class="nb">true</span><span class="p">)</span>
+
+<span class="c"># true</span>
+</pre></div>
+</div>
+<p>It’s a little obnoxious to type, but it gets the job done.</p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">var&quot;name&quot;</span></code> for variables works in some pretty strange places. How about doing some Orwellian math?</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="sa">var</span><span class="s">&quot;5&quot;</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="mi">2</span><span class="o">+</span><span class="mi">2</span> <span class="o">===</span> <span class="sa">var</span><span class="s">&quot;5&quot;</span>
+
+<span class="c"># true</span>
+</pre></div>
+</div>
+<p>Many Julia critics complain about the language having 1-based indexing instead of 0-based indexing<a class="footnote-reference brackets" href="#onebased" id="id4">4</a>. Forget <a class="reference external" href="https://github.com/JuliaArrays/OffsetArrays.jl">OffsetArrays.jl</a>–let’s set the number 0 itself to equal 1:</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="sc">&#39;a&#39;</span><span class="p">,</span><span class="sc">&#39;b&#39;</span><span class="p">,</span><span class="sc">&#39;c&#39;</span><span class="p">]</span>
+<span class="sa">var</span><span class="s">&quot;0&quot;</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">x</span><span class="p">[</span><span class="sa">var</span><span class="s">&quot;0&quot;</span><span class="p">]</span>
+
+<span class="c"># &quot;a&quot;</span>
+</pre></div>
+</div>
+<p>Needless to say, I wouldn’t recommend putting this into production code<a class="footnote-reference brackets" href="#countablyinfinite" id="id5">5</a>.</p>
+<p>But I digress. Where were we? We want “private” fields that discourage people from touching them. How to do this? Well, consider the following code:</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="kt">mystruct</span>
+    <span class="n">field1</span>
+    <span class="sa">var</span><span class="s">&quot;#field2&quot;</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<p>Let’s create an instance of <code class="docutils literal notranslate"><span class="pre">mystruct</span></code>:</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">mystruct</span><span class="p">(</span><span class="s">&quot;public&quot;</span><span class="p">,</span> <span class="s">&quot;private-ish&quot;</span><span class="p">)</span>
+
+<span class="c"># mystruct(&quot;public&quot;, &quot;privateish&quot;)</span>
+</pre></div>
+</div>
+<p>Suppose we type <code class="docutils literal notranslate"><span class="pre">x.</span></code> into the REPL and hit tab twice. What does the autocomplete suggest?</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span> <span class="c"># TAB twice</span>
+
+<span class="c"># #field2  field1</span>
+</pre></div>
+</div>
+<p>OK, anyone can see the fieldnames for this struct. They can clearly access <code class="docutils literal notranslate"><span class="pre">x.field1</span></code> without any problems. What happens if they try to access field2?</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="c">#field2</span>
+
+<span class="c">#</span>
+</pre></div>
+</div>
+<p>Nothing happens except a newline. Try once or twice more and you’ll get <code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">syntax:</span> <span class="pre">incomplete:</span> <span class="pre">premature</span> <span class="pre">end</span> <span class="pre">of</span> <span class="pre">input</span></code>.</p>
+<p>What’s happening here? The <code class="docutils literal notranslate"><span class="pre">#</span></code> character actually marks the start of comments. As soon as you type <code class="docutils literal notranslate"><span class="pre">x.#</span></code>, everything after the hashtag is completely ignored by Julia. The fieldname is effectively impossible to access using the form of the name printed by the autocomplete.</p>
+<p>What if a curious user tries to query the property names of the struct?</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">propertynames</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c"># (:field1, Symbol(&quot;#field2&quot;))</span>
+</pre></div>
+</div>
+<p>This gives an even more formidable looking <code class="docutils literal notranslate"><span class="pre">Symbol(...)</span></code> for the second fieldname. Have fun trying to get <code class="docutils literal notranslate"><span class="pre">x.Symbol(&quot;#field2&quot;)</span></code> to evaluate properly.</p>
+<p>For lack of a better name, you could call this the <code class="docutils literal notranslate"><span class="pre">var&quot;#name&quot;</span></code> method. Simply use <code class="docutils literal notranslate"><span class="pre">var</span></code> variable names prefixed with a hashtag.</p>
+<p>Now is this foolproof? Unfortunately, no. There are two simple ways that a determined user can access <code class="docutils literal notranslate"><span class="pre">#field2</span></code>:</p>
+<ol class="simple">
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">var&quot;name&quot;</span></code> syntax: <code class="docutils literal notranslate"><span class="pre">x.var&quot;#field2&quot;</span></code></p></li>
+<li><p>Call <code class="docutils literal notranslate"><span class="pre">getfield</span></code> using that <code class="docutils literal notranslate"><span class="pre">Symbol()</span></code> form: <code class="docutils literal notranslate"><span class="pre">getfield(x,</span> <span class="pre">Symbol(&quot;#field2&quot;))</span></code></p></li>
+</ol>
+<p>The bottom line is that this technique does not result in truly private fields. However there’s a few reasons why I still like the idea of <code class="docutils literal notranslate"><span class="pre">var&quot;#name&quot;</span></code> syntax for fields you don’t want other people touching:</p>
+<ul class="simple">
+<li><p>Beginners to Julia will likely be unaware of <code class="docutils literal notranslate"><span class="pre">&#64;var_str</span></code> and <code class="docutils literal notranslate"><span class="pre">getfield</span></code>. They will have no idea how to access the value of fields beginning with a hashtag.</p></li>
+<li><p>Similar to underscores in Python, the <code class="docutils literal notranslate"><span class="pre">var&quot;#name&quot;</span></code> method communicates to advanced users that those fields shouldn’t be touched unless they know what they’re doing. It also makes the fieldname a bit more obnoxious and ugly to type, which subtly discourages them from accessing it in their code.</p></li>
+</ul>
+<p>The only disadvantage of this method I’m aware of is having to write <code class="docutils literal notranslate"><span class="pre">var&quot;#name&quot;</span></code> everywhere in your own code. But I suspect a macro could take care of that fairly easily. I’ll leave that for another blog post someday.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="noprivate"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>In fact, Julia doesn’t really support private anything–variables, modules, functions….</p>
+</dd>
+<dt class="label" id="haveyou"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>You haven’t? I have. Maybe I’m just weird.</p>
+</dd>
+<dt class="label" id="noparse"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>There are good reasons for this though, and more characters are being <a class="reference external" href="https://github.com/JuliaLang/julia/issues/19012">added in over time</a>.</p>
+</dd>
+<dt class="label" id="onebased"><span class="brackets"><a class="fn-backref" href="#id4">4</a></span></dt>
+<dd><p>I have no preference between one-based and zero-based. Both have their strengths and weaknesses. I do prefer that people stop arguing though.</p>
+</dd>
+<dt class="label" id="countablyinfinite"><span class="brackets"><a class="fn-backref" href="#id5">5</a></span></dt>
+<dd><p>That would require a countably infinite number of variables to shift the behavior of all integer indices. You might run out of RAM.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+<div class="section">
+    
+
+<div class="section">
+  <span style="float: left">
+     Previous:
+    
+    <a href="Apr_3_2022.html">
+       A Family Tradition
+    </a>
+    
+  </span>
+  <span>&nbsp;</span>
+  <span style="float: right">
+    
+  </span>
+</div>
+  
+</div>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By James Usevitch<br/>
+  
+      &copy; Copyright 2021, James Usevitch.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
