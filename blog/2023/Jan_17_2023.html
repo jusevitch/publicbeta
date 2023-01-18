@@ -454,28 +454,28 @@ Just for kicks, let’s also abbreviate the 3-step reshaping heuristic as 3SRH b
 <h3>Scalar-Matrix Derivatives<a class="headerlink" href="#scalar-matrix-derivatives" title="Permalink to this headline">#</a></h3>
 <p>This one might seem a little scary for the uninitiated. Taking the derivative of something with respect to a <em>matrix</em>? Are you crazy??</p>
 <p>No, it’s not that bad. Keep calm, and carry on with the FSMD.</p>
-<p>Let’s denote the <span class="math notranslate nohighlight">\((i,j)\)</span>th entry of <span class="math notranslate nohighlight">\(x\)</span> as <span class="math notranslate nohighlight">\(x_{i,j}\)</span>. Take the partial derivative of the only entry of <span class="math notranslate nohighlight">\(y\)</span> with respect to each and every <span class="math notranslate nohighlight">\(x_{i,j}\)</span> variable. And voila–it’s over.</p>
+<p>Suppose that <span class="math notranslate nohighlight">\(x\)</span> is a <span class="math notranslate nohighlight">\((N_1 \times N_2)\)</span> matrix. Let’s denote the <span class="math notranslate nohighlight">\((i,j)\)</span>th entry of <span class="math notranslate nohighlight">\(x\)</span> as <span class="math notranslate nohighlight">\(x_{i,j}\)</span>. Take the partial derivative of the only entry of <span class="math notranslate nohighlight">\(y\)</span> with respect to each and every <span class="math notranslate nohighlight">\(x_{i,j}\)</span> variable. And voila–it’s over.</p>
 <p>There does happen to be a clean convention for how to shape the final result into a matrix:</p>
 <div class="math notranslate nohighlight" id="equation-eq-scalarmatrix">
 <span class="eqno">(1)<a class="headerlink" href="#equation-eq-scalarmatrix" title="Permalink to this equation">#</a></span>\[\begin{split}
 \frac{\partial y(z)}{\partial x} = \begin{bmatrix}
-\frac{\partial y(z)}{\partial x_{1,1}} &amp; \frac{\partial y(z)}{\partial x_{1,2}} &amp; \cdots &amp; \frac{\partial y(z)}{\partial x_{1,N}} \\
+\frac{\partial y(z)}{\partial x_{1,1}} &amp; \frac{\partial y(z)}{\partial x_{1,2}} &amp; \cdots &amp; \frac{\partial y(z)}{\partial x_{1,N_2}} \\
 \frac{\partial y(z)}{\partial x_{2,1}} &amp; \frac{\partial y(z)}{\partial x_{2,2}} &amp; \\
 \vdots &amp; &amp; \ddots \\
-\frac{\partial y(z)}{\partial x_{M,1}} &amp; &amp; &amp; \frac{\partial y(z)}{\partial x_{M,N}}       
+\frac{\partial y(z)}{\partial x_{N_1,1}} &amp; &amp; &amp; \frac{\partial y(z)}{\partial x_{N_1,N_2}}       
 \end{bmatrix}
 \end{split}\]</div>
 <p>But notice that we very well could have used the 3SRH to compute this as well. Here’s how:</p>
 <ul class="simple">
 <li><p>Reshape <span class="math notranslate nohighlight">\(y\)</span> into a <span class="math notranslate nohighlight">\((1 \times 1)\)</span>-dimensional vector. Since <span class="math notranslate nohighlight">\(y\)</span> is a scalar, we’re already done.</p></li>
-<li><p>Reshape <span class="math notranslate nohighlight">\(x\)</span> into a <span class="math notranslate nohighlight">\((N \times 1)\)</span>-dimensional vector. If <span class="math notranslate nohighlight">\(x\)</span> is a <span class="math notranslate nohighlight">\((P \times Q)\)</span> matrix, then this means we reshape it into a <span class="math notranslate nohighlight">\((PQ \times 1)\)</span> vector. We’ll call this reshaped vector <span class="math notranslate nohighlight">\(\hat{x}\)</span>:</p></li>
+<li><p>Reshape <span class="math notranslate nohighlight">\(x\)</span> into a <span class="math notranslate nohighlight">\((N_1 N_2 \times 1)\)</span>-dimensional vector. We’ll call this reshaped vector <span class="math notranslate nohighlight">\(\hat{x}\)</span>:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\begin{split}
- \hat{x} = \begin{bmatrix} x_{1,1} \\ x_{1,2} \\ \vdots \\ x_{1,Q} \\ x_{2,1} \\ \vdots \\ x_{2,Q} \\ \vdots \\ x_{P,1} \\ \vdots \\ x_{P,Q} \end{bmatrix}
+ \hat{x} = \begin{bmatrix} x_{1,1} \\ x_{1,2} \\ \vdots \\ x_{1,N_2} \\ x_{2,1} \\ \vdots \\ x_{2,N_2} \\ \vdots \\ x_{N_1,1} \\ \vdots \\ x_{N_1,N_2} \end{bmatrix}
  \end{split}\]</div>
 <ul class="simple">
-<li><p>Compute the partial derivative of the only component of <span class="math notranslate nohighlight">\(y\)</span> with respect to every component <span class="math notranslate nohighlight">\(x^r_i\)</span> of <span class="math notranslate nohighlight">\(x_r\)</span> as follows:</p></li>
+<li><p>Compute the partial derivative of the only component of <span class="math notranslate nohighlight">\(y\)</span> with respect to every component of <span class="math notranslate nohighlight">\(\hat{x}\)</span> as follows:</p></li>
 </ul>
 <div class="math notranslate nohighlight" id="equation-eq-scalarmatrixvec">
 <span class="eqno">(2)<a class="headerlink" href="#equation-eq-scalarmatrixvec" title="Permalink to this equation">#</a></span>\[\begin{split}
@@ -483,7 +483,7 @@ Just for kicks, let’s also abbreviate the 3-step reshaping heuristic as 3SRH b
 \frac{\partial y(z)}{\partial x_{1,1}} \\
 \frac{\partial y(z)}{\partial x_{1,2}} \\
 \vdots \\
-\frac{\partial y(z)}{\partial x_{PQ}}
+\frac{\partial y(z)}{\partial x_{N_1 N_2}}
 \end{bmatrix}
 \end{split}\]</div>
 <p>Notice that we can reshape the vector in <a class="reference internal" href="#equation-eq-scalarmatrixvec">(2)</a> into the matrix in <a class="reference internal" href="#equation-eq-scalarmatrix">(1)</a>.</p>
