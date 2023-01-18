@@ -1,0 +1,428 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scalar, Vector, and Matrix Derivatives Demystified &#8212; Public Beta</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+      
+<style type="text/css">
+  ul.ablog-archive {
+    list-style: none;
+    overflow: auto;
+    margin-left: 0px;
+  }
+  ul.ablog-archive li {
+    float: left;
+    margin-right: 5px;
+    font-size: 80%;
+  }
+  ul.postlist a {
+    font-style: italic;
+  }
+  ul.postlist-style-disc {
+    list-style-type: disc;
+  }
+  ul.postlist-style-none {
+    list-style-type: none;
+  }
+  ul.postlist-style-circle {
+    list-style-type: circle;
+  }
+</style>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Public Beta</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../blog.html">
+   Blog
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about.html">
+   About
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../meta_learning/index_meta_learning.html">
+   Meta Learning
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../julia/julia_index.html">
+   JuliaLang
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../julia/allocations.html">
+     Allocations and Memory Management
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../control_theory/index_control_theory.html">
+   Control Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../optimization/index_optimization.html">
+   Optimization
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ML_RL/index_ML_RL.html">
+   ML / RL
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ML_RL/differentiable_ode.html">
+     Differentiable ODE Solvers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../music/index_music.html">
+   Music
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../music/music_software.html">
+     Favorite Music Software
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prelude">
+   Prelude
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-are-we-actually-doing">
+   What are we actually doing?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-should-i-care">
+   Why should I care?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#forward-mode-reverse-mode">
+   Forward Mode? Reverse Mode?
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Scalar, Vector, and Matrix Derivatives Demystified</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prelude">
+   Prelude
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-are-we-actually-doing">
+   What are we actually doing?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-should-i-care">
+   Why should I care?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#forward-mode-reverse-mode">
+   Forward Mode? Reverse Mode?
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                 <div class="tex2jax_ignore mathjax_ignore section" id="scalar-vector-and-matrix-derivatives-demystified">
+<h1>Scalar, Vector, and Matrix Derivatives Demystified<a class="headerlink" href="#scalar-vector-and-matrix-derivatives-demystified" title="Permalink to this headline">#</a></h1>
+<p>Everywhere you turn, automatic differentiation (AD) is being applied to new problems and new algorithms. People are trying to differentiate all the things these days from Kalman and particle filters to convex and nonconvex optimization solvers.</p>
+<p>Those who have hung around machine learning circles have undoubtedly heard the phrases “forward-mode AD” and “reverse-mode AD” tossed around. Both compute the gradient of a function with respect to parameters.</p>
+<p>The purpose of this post is to give a (very) simple overview of the math behind forward-mode and reverse-mode AD. It is by no means an exhaustive explanation, but the intent is to give you the big picture before diving into the more devilish details of more complicated scenarios.</p>
+<div class="section" id="prelude">
+<h2>Prelude<a class="headerlink" href="#prelude" title="Permalink to this headline">#</a></h2>
+<p>To understand forward-mode and reverse-mode AD, there are a few mathematical concepts to understand first.</p>
+<p><strong>Derivatives:</strong> This should go without saying.</p>
+<p><strong>Partial Derivatives:</strong> Take a function of two variables <span class="math notranslate nohighlight">\(y = f(x_1, x_2, x_3)\)</span>. To take the partial derivative of <span class="math notranslate nohighlight">\(y\)</span> with respect to (w.r.t.) <span class="math notranslate nohighlight">\(x_1\)</span>, treat all the other variables like constants and take the derivative of <span class="math notranslate nohighlight">\(y\)</span> with respect to <span class="math notranslate nohighlight">\(x_1\)</span>. To take the partial derivative of <span class="math notranslate nohighlight">\(y\)</span> w.r.t. <span class="math notranslate nohighlight">\(x_2\)</span>, treat all the other variables like constants and take the derivative of <span class="math notranslate nohighlight">\(y\)</span> w.r.t. <span class="math notranslate nohighlight">\(x_2\)</span>. And so forth.</p>
+<p>There’s a lot of notation people use for this, but I’ll use the following:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{\partial y(z)}{\partial x_i}: \text{ The partial derivative of y w.r.t. $x_i$, evaluated at the point } z.
+\end{align*}\]</div>
+<p><strong>Gradients:</strong> Say you have a function <span class="math notranslate nohighlight">\(y = f(x)\)</span> where <span class="math notranslate nohighlight">\(y\)</span> is a scalar, and <span class="math notranslate nohighlight">\(x = \begin{bmatrix}x_1 &amp; x_2 &amp; \ldots x_N \end{bmatrix}^\intercal\)</span> is a vector. The gradient of <span class="math notranslate nohighlight">\(y\)</span> with respect to <span class="math notranslate nohighlight">\(x\)</span> is the vector of all the partial derivatives of <span class="math notranslate nohighlight">\(y\)</span> with respect to each entry of <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>Mathematically this looks like</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{\partial y(z)}{\partial x} = \begin{bmatrix} \frac{\partial y(z)}{\partial x_1} &amp; \frac{\partial y(z)}{\partial x_2} &amp; \ldots &amp; \frac{\partial y(z)}{\partial x_N}  \end{bmatrix}
+\end{align*}\]</div>
+<p><strong>Jacobians:</strong> Using our <span class="math notranslate nohighlight">\(y = f(x)\)</span> example yet again, now suppose that <span class="math notranslate nohighlight">\(y = \begin{bmatrix} y_1 &amp; y_2 &amp; \ldots &amp; y_M \end{bmatrix}\)</span> is a vector with length <span class="math notranslate nohighlight">\(M\)</span>, and <span class="math notranslate nohighlight">\(x = \begin{bmatrix} x_1 &amp; x_2 &amp; \ldots x_N \end{bmatrix}\)</span> is a vector of length <span class="math notranslate nohighlight">\(M\)</span>. The Jacobian is a matrix containing the partial derivatives of each <span class="math notranslate nohighlight">\(y\)</span> entry <span class="math notranslate nohighlight">\(y_i\)</span> with respect to each <span class="math notranslate nohighlight">\(x\)</span> entry <span class="math notranslate nohighlight">\(x_j\)</span>.</p>
+<p>More specifically, let’s call the Jacobian matrix <span class="math notranslate nohighlight">\(J\)</span> and say that <span class="math notranslate nohighlight">\(J_{i,j}\)</span> is the entry in the <span class="math notranslate nohighlight">\(i\)</span>th row and <span class="math notranslate nohighlight">\(j\)</span>th column. This entry is defined as</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+J_{i,j}(z) = \frac{\partial y_i(z)}{\partial x_j}
+\end{align*}\]</div>
+<p>Another way to describe <span class="math notranslate nohighlight">\(J\)</span> is that it’s just the gradient of each <span class="math notranslate nohighlight">\(y_i\)</span> entry stacked on top of each other:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+J(z) = \begin{bmatrix} \frac{\partial y_1(z)}{\partial x} \\ \frac{\partial y_2(z)}{\partial x} \\ \vdots \\ \frac{\partial y_M(z)}{\partial x} \end{bmatrix}
+\end{align*}\]</div>
+</div>
+<div class="section" id="what-are-we-actually-doing">
+<h2>What are we actually doing?<a class="headerlink" href="#what-are-we-actually-doing" title="Permalink to this headline">#</a></h2>
+<p>For simplicity, say we have a function <span class="math notranslate nohighlight">\(y = f(x)\)</span>. We want to com</p>
+</div>
+<div class="section" id="why-should-i-care">
+<h2>Why should I care?<a class="headerlink" href="#why-should-i-care" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="forward-mode-reverse-mode">
+<h2>Forward Mode? Reverse Mode?<a class="headerlink" href="#forward-mode-reverse-mode" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+
+<div class="section">
+   
+</div>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By James Usevitch<br/>
+  
+      &copy; Copyright 2021, James Usevitch.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
